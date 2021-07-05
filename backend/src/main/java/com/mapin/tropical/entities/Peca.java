@@ -28,10 +28,8 @@ public class Peca implements Serializable {
 	@Column(columnDefinition = "TEXT")
 	private String descricao;
 	
-	private Double preco;
-
 	@ManyToMany
-	@JoinTable(name = "tb_produto_modelo", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "modelo_id"))
+	@JoinTable(name = "tb_peca_modelo", joinColumns = @JoinColumn(name = "peca_id"), inverseJoinColumns = @JoinColumn(name = "modelo_id"))
 	private Set<Modelo> modelos = new HashSet<>();
 
 	public Long getId() {
@@ -68,14 +66,6 @@ public class Peca implements Serializable {
 
 	public Set<Modelo> getModelos() {
 		return modelos;
-	}
-	
-	public Double getPreco() {
-		return preco;
-	}
-	
-	public void setPreco(Double preco) {
-		this.preco = preco;
 	}
 
 	@Override

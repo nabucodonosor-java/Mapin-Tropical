@@ -23,8 +23,6 @@ public class PecaDto implements Serializable {
 
 	private String descricao;
 
-	private Double preco;
-
 	private List<ModeloDto> modelos = new ArrayList<>();
 
 	public PecaDto() {
@@ -35,7 +33,6 @@ public class PecaDto implements Serializable {
 		nome = entity.getNome();
 		imgUrl = entity.getImgUrl();
 		descricao = entity.getDescricao();
-		preco = entity.getPreco();
 	}
 
 	public PecaDto(Peca entity, Set<Modelo> modelos) {
@@ -72,14 +69,6 @@ public class PecaDto implements Serializable {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public Double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
 	}
 
 	public List<ModeloDto> getModelos() {

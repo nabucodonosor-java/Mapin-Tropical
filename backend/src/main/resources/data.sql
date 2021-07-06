@@ -13,8 +13,10 @@ INSERT INTO tb_marca (nome) VALUES ('Ford');
 INSERT INTO tb_marca (nome) VALUES ('Volkswagen');
 INSERT INTO tb_marca (nome) VALUES ('Fiat');
 INSERT INTO tb_marca (nome) VALUES ('Scania');
+INSERT INTO tb_marca (nome) VALUES ('Volvo');
 
-INSERT INTO tb_peca (nome, img_url, descricao) VALUES ('Mola', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Mola para caminhão');
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Mola', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Mola para caminhão');
 
 INSERT INTO tb_modelo (nome, marca_id) VALUES ('Constellation', 3);
 INSERT INTO tb_modelo (nome, marca_id) VALUES ('Constellation Luxo', 3);

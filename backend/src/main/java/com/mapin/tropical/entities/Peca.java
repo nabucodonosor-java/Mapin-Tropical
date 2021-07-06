@@ -27,10 +27,14 @@ public class Peca implements Serializable {
 	private String imgUrl;
 	@Column(columnDefinition = "TEXT")
 	private String descricao;
-	
+
 	@ManyToMany
-	@JoinTable(name = "tb_peca_modelo", joinColumns = @JoinColumn(name = "peca_id"), inverseJoinColumns = @JoinColumn(name = "modelo_id"))
-	private Set<Modelo> modelos = new HashSet<>();
+	@JoinTable(name = "tb_peca_marca", joinColumns = @JoinColumn(name = "peca_id"), inverseJoinColumns = @JoinColumn(name = "marca_id"))
+	private Set<Marca> marcas = new HashSet<>();
+
+	@ManyToMany
+	@JoinTable(name = "tb_peca_categoria", joinColumns = @JoinColumn(name = "peca_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+	private Set<Categoria> categorias = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -64,8 +68,12 @@ public class Peca implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public Set<Modelo> getModelos() {
-		return modelos;
+	public Set<Marca> getMarcas() {
+		return marcas;
+	}
+
+	public Set<Categoria> getCategorias() {
+		return categorias;
 	}
 
 	@Override

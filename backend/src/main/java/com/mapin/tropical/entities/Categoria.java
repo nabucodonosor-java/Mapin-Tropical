@@ -5,30 +5,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_modelo")
-public class Modelo implements Serializable {
+@Table(name = "tb_categoria")
+public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	private String nome;
-
-	@ManyToOne
-	@JoinColumn(name = "marca_id")
-	private Marca marca;
-
-	@ManyToMany(mappedBy = "modelos")
+	
+	@ManyToMany(mappedBy = "categorias")
 	private Set<Peca> pecas = new HashSet<>();
 
 	public Long getId() {
@@ -46,15 +34,7 @@ public class Modelo implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public Marca getMarca() {
-		return marca;
-	}
-
-	public void setMarca(Marca marca) {
-		this.marca = marca;
-	}
-
+	
 	public Set<Peca> getPecas() {
 		return pecas;
 	}
@@ -75,7 +55,7 @@ public class Modelo implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Modelo other = (Modelo) obj;
+		Categoria other = (Categoria) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;

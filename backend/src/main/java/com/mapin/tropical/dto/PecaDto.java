@@ -7,7 +7,8 @@ import java.util.Set;
 
 import javax.validation.constraints.NotBlank;
 
-import com.mapin.tropical.entities.Modelo;
+import com.mapin.tropical.entities.Categoria;
+import com.mapin.tropical.entities.Marca;
 import com.mapin.tropical.entities.Peca;
 
 public class PecaDto implements Serializable {
@@ -23,7 +24,9 @@ public class PecaDto implements Serializable {
 
 	private String descricao;
 
-	private List<ModeloDto> modelos = new ArrayList<>();
+	private List<MarcaDto> marcas = new ArrayList<>();
+
+	private List<CategoriaDto> categorias = new ArrayList<>();
 
 	public PecaDto() {
 	}
@@ -35,8 +38,10 @@ public class PecaDto implements Serializable {
 		descricao = entity.getDescricao();
 	}
 
-	public PecaDto(Peca entity, Set<Modelo> modelos) {
-		modelos.forEach(modelo -> this.modelos.add(new ModeloDto(modelo)));
+	public PecaDto(Peca entity, Set<Marca> marcas, Set<Categoria> categorias) {
+		this(entity);
+		marcas.forEach(marca -> this.marcas.add(new MarcaDto(marca)));
+		categorias.forEach(categoria -> this.categorias.add(new CategoriaDto(categoria)));
 	}
 
 	public Long getId() {
@@ -71,8 +76,12 @@ public class PecaDto implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public List<ModeloDto> getModelos() {
-		return modelos;
+	public List<MarcaDto> getMarcas() {
+		return marcas;
+	}
+
+	public List<CategoriaDto> getCategorias() {
+		return categorias;
 	}
 
 }

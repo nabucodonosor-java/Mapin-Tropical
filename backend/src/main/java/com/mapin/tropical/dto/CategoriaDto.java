@@ -6,9 +6,9 @@ import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.domain.Page;
 
-import com.mapin.tropical.entities.Marca;
+import com.mapin.tropical.entities.Categoria;
 
-public class MarcaDto implements Serializable {
+public class CategoriaDto implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
@@ -16,10 +16,10 @@ public class MarcaDto implements Serializable {
 	@NotBlank
 	private String nome;
 
-	public MarcaDto() {
+	public CategoriaDto() {
 	}
 
-	public MarcaDto(Marca entity) {
+	public CategoriaDto(Categoria entity) {
 		id = entity.getId();
 		nome = entity.getNome();
 	}
@@ -40,8 +40,8 @@ public class MarcaDto implements Serializable {
 		this.nome = nome;
 	}
 
-	public static Page<MarcaDto> converter(Page<Marca> page) {
-		return page.map(MarcaDto::new);
+	public static Page<CategoriaDto> converter(Page<Categoria> categorias) {
+		return categorias.map(CategoriaDto::new);
 	}
 
 }

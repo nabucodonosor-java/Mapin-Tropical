@@ -1,5 +1,8 @@
 import Navbar from 'core/components/Navbar';
+import Admin from 'pages/Admin';
+import Auth from 'pages/Auth';
 import Catalog from 'pages/Catalog';
+import PecaDetails from 'pages/Catalog/components/PecaDetails';
 import Home from 'pages/Home';
 import React from 'react';
 import { Router, Switch, Route, Redirect  } from 'react-router-dom';

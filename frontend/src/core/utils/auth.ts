@@ -1,8 +1,8 @@
 import jwtDecode from 'jwt-decode';
 import history from './history';
 
-export const CLIENT_ID = 'docadmin';
-export const CLIENT_SECRET = 'docadmin123';
+export const CLIENT_ID = 'mapintropical';
+export const CLIENT_SECRET = 'mapintropical123';
 
 type LoginResponse = {
     access_token: string;

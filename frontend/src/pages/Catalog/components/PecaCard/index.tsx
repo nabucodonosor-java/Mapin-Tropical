@@ -14,12 +14,12 @@ const PecaCard = ({ peca }: Props) => (
                 {peca.nome}
             </h6>
             <div className="medico-card-especialidade">
-                {peca.especialidades.map(e => e.nome)}
+                {peca.marcas.map(e => e.nome)}
             </div>
             <div className="medico-card-especializacao">
                         
                 <span className="badge rounded-pill bg-secondary mr-2">
-                        {medico?.especializacoes.map(c => " - " + c.nome + " - ")}
+                        {peca?.categorias.map(c => " - " + c.nome + " - ")}
                 </span>
                          
             </div>  
@@ -27,4 +27,4 @@ const PecaCard = ({ peca }: Props) => (
     </div>
 );
 
-export default MedicoCard;
+export default PecaCard;

@@ -1,7 +1,7 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 
-const MedicoDescriptionLoader = () => (
+const PecaDescriptionLoader = () => (
   <ContentLoader
     speed={1}
     width="100%"
@@ -17,4 +17,4 @@ const MedicoDescriptionLoader = () => (
   </ContentLoader>
 )
 
-export default MedicoDescriptionLoader;
+export default PecaDescriptionLoader;

@@ -1,54 +1,54 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Especialidade, MedicoResponse } from 'core/types/Medico';
+import { Marca, PecaResponse } from 'core/types/Peca';
 import { makePrivateRequest } from 'core/utils/request';
-import MedicoCard from './components/PecaCard';
-import MedicoCardLoader from './components/Loaders/MedicoCardLoader';
+import PecaCard from './components/PecaCard';
+import PecaCardLoader from './components/Loaders/PecaCardLoader';
 import Pagination from 'core/components/Pagination';
-import MedicoFilters from 'core/components/Filters/PecaFilters';
+import PecaFilters from 'core/components/Filters/PecaFilters';
 import './styles.scss';
 
 const Catalog = () => {
 
-    const [medicoResponse, setMedicoResponse] = useState<MedicoResponse>();
+    const [pecaResponse, setPecaResponse] = useState<PecaResponse>();
     const [isLoading, setIsLoading] = useState(false);
     const [activePage, setActivePage] = useState(0);
     const [nome, setNome] = useState('');
-    const [especialidade, setEspecialidade] = useState<Especialidade>();
+    const [marca, setMarca] = useState<Marca>();
 
-    const getMedicos = useCallback(() => {
+    const getPecas = useCallback(() => {
         const params = { 
             page: activePage,
             linesPerPage: 15,
             nome,
-            especialidadeId: especialidade?.id
+            marcaId: marca?.id
         }
 
         setIsLoading(true);
-        makePrivateRequest({ url: '/medicos', params })
-       .then(response => setMedicoResponse(response.data))
+        makePrivateRequest({ url: '/pecas/marcas', params })
+       .then(response => setPecaResponse(response.data))
        .finally(() => {
         setIsLoading(false);
        })
-    }, [activePage, nome, especialidade]);
+    }, [activePage, nome, marca]);
 
     useEffect(() => {
-        getMedicos();
-    }, [getMedicos]);
+        getPecas();
+    }, [getPecas]);
 
     const handleChangeName = (name: string) => {
         setActivePage(0);
         setNome(name);
     }
 
-    const handleChangeEspecialidade = (especialidade: Especialidade) => {
+    const handleChangeMarca = (marca: Marca) => {
         setActivePage(0);
-        setEspecialidade(especialidade);
+        setMarca(marca);
     }
 
     const clearFilters = () => {
         setActivePage(0);
-        setEspecialidade(undefined);
+        setMarca(undefined);
         setNome('');
     }
 
@@ -56,26 +56,26 @@ const Catalog = () => {
         <div className="catalog-container">
             <div className="catalog-filter-container">
                
-                <MedicoFilters
+                <PecaFilters
                     nome={nome}
-                    especialidade={especialidade}
-                    handleChangeEspecialidade={handleChangeEspecialidade}
+                    marca={marca}
+                    handleChangeMarca={handleChangeMarca}
                     handleChangeName={handleChangeName}
                     clearFilters={clearFilters}
                     />
             </div>
             <div className="catalog-medicos">
-                {isLoading ? <MedicoCardLoader /> : (
-                    medicoResponse?.content.map(medico => (
-                        <Link to={`/medicos/${medico.id}`} key={medico.id}>
-                            <MedicoCard medico={medico}/>
+                {isLoading ? <PecaCardLoader /> : (
+                    pecaResponse?.content.map(peca => (
+                        <Link to={`/pecas/${peca.id}`} key={peca.id}>
+                            <PecaCard peca={peca}/>
                         </Link> 
                      ))
                 )}           
             </div>
-            {medicoResponse && (
+            {pecaResponse && (
                 <Pagination 
-                totalPages={medicoResponse.totalPages}
+                totalPages={pecaResponse.totalPages}
                 activePage={activePage}
                 onChange={page => setActivePage(page)}
                 />

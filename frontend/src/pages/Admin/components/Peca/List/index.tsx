@@ -1,74 +1,74 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { Especialidade, MedicoResponse } from 'core/types/Medico';
+import { Marca, PecaResponse } from 'core/types/Peca';
 import { useHistory } from 'react-router-dom';
 import { makePrivateRequest } from 'core/utils/request';
 import { toast } from 'react-toastify';
 import CardLoader from '../Loaders/MedicoCardLoader';
 import Card from '../Card';
 import Pagination from 'core/components/Pagination';
-import MedicosFilters  from 'core/components/Filters/PecaFilters';
+import PecaFilters  from 'core/components/Filters/PecaFilters';
 import './styles.scss';
 
 const List = () => {
-    const [medicoResponse, setMedicoResponse] = useState<MedicoResponse>();
+    const [pecaResponse, setPecaResponse] = useState<PecaResponse>();
     const [isLoading, setIsLoading] = useState(false);
     const [activePage, setActivePage] = useState(0);
     const history = useHistory();
     const [nome, setNome] = useState('');
-    const [especialidade, setEspecialidade] = useState<Especialidade>();
+    const [marca, setMarca] = useState<Marca>();
 
-    const getMedicos = useCallback(() => {
+    const getPecas = useCallback(() => {
         const params = {
             page: activePage,
             linesPerPage: 20,
             direction: 'DESC',
             orderBy: 'id',
             nome,
-            especialidadeId: especialidade?.id
+            marcaId: marca?.id
         }
         setIsLoading(true);
-        makePrivateRequest({ url: '/medicos', params })
-       .then(response => setMedicoResponse(response.data))
+        makePrivateRequest({ url: '/pecas', params })
+       .then(response => setPecaResponse(response.data))
        .finally(() => {
         setIsLoading(false);
        })
-    }, [activePage, nome, especialidade]);
+    }, [activePage, nome, marca]);
 
     useEffect(() => {
-        getMedicos();    
-    }, [getMedicos]);
+        getPecas();    
+    }, [getPecas]);
     
     const handleChangeName = (name: string) => {
         setActivePage(0);
         setNome(name);
     }
 
-    const handleChangeEspecialidade = (especialidade: Especialidade) => {
+    const handleChangeMarca = (marca: Marca) => {
         setActivePage(0);
-        setEspecialidade(especialidade);
+        setMarca(marca);
     }
 
     const clearFilters = () => {
         setActivePage(0);
-        setEspecialidade(undefined);
+        setMarca(undefined);
         setNome('');
     }
 
     const handleCreate = () => { 
-        history.push('/admin/medicos/create'); 
+        history.push('/admin/pecas/create'); 
     }
 
-    const onRemove = (medicoId: number) => {
-        const confirm = window.confirm('Deseja realmente excluir este produto?');
+    const onRemove = (pecaId: number) => {
+        const confirm = window.confirm('Deseja realmente excluir esta peça?');
 
         if (confirm) {
-            makePrivateRequest({ url: `/medicos/${medicoId}`, method: 'DELETE' })
+            makePrivateRequest({ url: `/pecas/${pecaId}`, method: 'DELETE' })
             .then(() => {
-                toast.info('Médico deletado com sucesso!');
-                getMedicos();
+                toast.info('Peça deletada com sucesso!');
+                getPecas();
             })
             .catch(() => {
-                toast.error('Erro ao deletar médico');
+                toast.error('Erro ao deletar peça');
             })
         }
     }
@@ -79,10 +79,10 @@ const List = () => {
                 <button className="btn btn-primary btn-lg admin-btn-add mr-5" onClick={handleCreate}>
                     ADICIONAR
                 </button>
-                <MedicosFilters
+                <PecaFilters
                     nome={nome}
-                    especialidade={especialidade}
-                    handleChangeEspecialidade={handleChangeEspecialidade}
+                    marca={marca}
+                    handleChangeMarca={handleChangeMarca}
                     handleChangeName={handleChangeName}
                     clearFilters={clearFilters}
                     />
@@ -90,13 +90,13 @@ const List = () => {
             
             <div className="admin-list-container">
                 {isLoading ? <CardLoader /> : (
-                    medicoResponse?.content.map(medico => (
-                        <Card medico={medico} key={medico.id} onRemove={onRemove} />
+                    pecaResponse?.content.map(peca => (
+                        <Card peca={peca} key={peca.id} onRemove={onRemove} />
                     ))
                 )}
-                {medicoResponse && (
+                {pecaResponse && (
                 <Pagination 
-                totalPages={medicoResponse.totalPages}
+                totalPages={pecaResponse.totalPages}
                 activePage={activePage}
                 onChange={page => setActivePage(page)}
                 />

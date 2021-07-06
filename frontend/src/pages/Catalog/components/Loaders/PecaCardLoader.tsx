@@ -2,7 +2,7 @@ import React from "react"
 import ContentLoader from "react-content-loader"
 import { generateList } from "core/utils/list"
 
-const MedicoCardLoader = () => {
+const PecaCardLoader = () => {
     const loaderItems = generateList(3);
 
     return (
@@ -24,4 +24,4 @@ const MedicoCardLoader = () => {
     )
 }
 
-export default MedicoCardLoader
+export default PecaCardLoader;

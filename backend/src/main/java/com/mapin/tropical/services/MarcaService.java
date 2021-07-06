@@ -26,8 +26,8 @@ public class MarcaService {
 
 	@Transactional(readOnly = true)
 	public Page<MarcaDto> findAllPaged(PageRequest pageRequest, String nome) {
-		Page<Marca> page = repository.findNome(nome, pageRequest);
-		return MarcaDto.converter(page);
+		Page<Marca> cidades = repository.findNome(nome, pageRequest);
+		return MarcaDto.converter(cidades);
 	}
 
 	@Transactional(readOnly = true)
@@ -49,13 +49,13 @@ public class MarcaService {
 	public MarcaDto update(Long id, MarcaDto dto) {
 		try {
 
-			Marca entity = new Marca();
+			Marca entity = repository.getOne(id);
 			entity.setNome(dto.getNome());
 			entity = repository.save(entity);
 			return new MarcaDto(entity);
 
 		} catch (EntityNotFoundException e) {
-			throw new NotFoundException("Entidade não encontrada!");
+			throw new NotFoundException("Marca não encontrada!");
 		}
 	}
 
@@ -65,7 +65,7 @@ public class MarcaService {
 			repository.deleteById(id);
 
 		} catch (EmptyResultDataAccessException e) {
-			throw new NotFoundException("Especialidade não encontrada!");
+			throw new NotFoundException("Marca não encontrada!");
 		} catch (DataIntegrityViolationException e) {
 			throw new DatabaseException("Violação de integridade do DB");
 		}

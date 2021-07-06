@@ -8,6 +8,10 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 
+
+INSERT INTO tb_categoria (nome) VALUES ('Linha Pesada');
+INSERT INTO tb_categoria (nome) VALUES ('Utilitários');
+
 INSERT INTO tb_marca (nome) VALUES ('Chevrolet');
 INSERT INTO tb_marca (nome) VALUES ('Ford');
 INSERT INTO tb_marca (nome) VALUES ('Volkswagen');
@@ -16,10 +20,15 @@ INSERT INTO tb_marca (nome) VALUES ('Scania');
 INSERT INTO tb_marca (nome) VALUES ('Volvo');
 
 INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
-('Mola', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Mola para caminhão');
+('Mola', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Mola para caminhão e utilitários');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (1,3);
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (1,2);
 
-INSERT INTO tb_modelo (nome, marca_id) VALUES ('Constellation', 3);
-INSERT INTO tb_modelo (nome, marca_id) VALUES ('Constellation Luxo', 3);
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (1,1);
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (1,2);
 
-INSERT INTO tb_peca_modelo (peca_id, modelo_id) VALUES (1,1);
-INSERT INTO tb_peca_modelo (peca_id, modelo_id) VALUES (1,2);
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Bucha', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Bucha para caminhão');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (2,5);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (2,1);

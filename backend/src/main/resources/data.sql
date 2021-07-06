@@ -32,3 +32,60 @@ INSERT INTO tb_peca (nome, img_url, descricao) VALUES
 INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (2,5);
 
 INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (2,1);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Porta C', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Porta para utilitários');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (3,6);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (3,2);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Porta IX', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Porta para caminhão');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (4,6);
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (4,1);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (4,1);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Bateria', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Bateria para caminhão e utilitários');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (5,3);
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (5,2);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (5,1);
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (5,2);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Bateria XX', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Bateria para caminhão');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (6,4);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (6,1);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Kit Molas', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Kit Molas para caminhão');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (7,4);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (7,1);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Kit Carburador', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Kit Carburador para caminhão e utilitários');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (8,3);
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (8,2);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (8,1);
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (8,2);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Kit Parafusos', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Kit Carburador para caminhão e utilitários');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (9,3);
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (9,2);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (9,1);
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (9,2);
+
+INSERT INTO tb_peca (nome, img_url, descricao) VALUES 
+('Kit Parafusos XX', 'https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg', 'Kit Carburador para caminhão e utilitários');
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (10,3);
+INSERT INTO tb_peca_marca (peca_id, marca_id) VALUES (10,2);
+
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (10,1);
+INSERT INTO tb_peca_categoria (peca_id, categoria_id) VALUES (10,2);

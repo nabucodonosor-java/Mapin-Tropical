@@ -14,7 +14,7 @@ const PecaCard = ({ peca }: Props) => (
                 {peca.nome}
             </h6>
             <div className="medico-card-especialidade">
-                {peca.marcas.map(e => e.nome)}
+                {peca.marcas.map(e => " - " + e.nome + " - ")}
             </div>
             <div className="medico-card-especializacao">
                         

@@ -26,7 +26,7 @@ const Navbar = () => {
                     <img 
                     src="https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg" 
                     alt="Foto"
-                    className="navbar-logo" />
+                    className="navbar-logo" /> 
                 </Link>
                 <button className="navbar-mobile-btn" type="button" onClick={() => setDrawerActive(!drawerActive)}>
                     <img src={menu} alt="Mobile Menu" />

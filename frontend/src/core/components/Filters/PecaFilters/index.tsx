@@ -32,7 +32,7 @@ const PecaFilters = ({ nome, handleChangeName, marca, handleChangeMarca, clearFi
                     type="text"
                     value={nome}  
                     className="form-control"
-                    placeholder="Pesquisar médico"
+                    placeholder="Pesquisar peça"
                     onChange={event => handleChangeName(event.target.value)}                  
                 />
                 <SearchIcon />
@@ -40,14 +40,14 @@ const PecaFilters = ({ nome, handleChangeName, marca, handleChangeMarca, clearFi
             <Select
                 name="marcas"
                 key={`select-${marca?.id}`}
-                value={marcas}
+                value={marca}
                 isLoading={isLoadingMarca}
                 options={marcas}
                 getOptionLabel={(option: Marca) => option.nome}
                 getOptionValue={(option: Marca) => String(option.id)}
                 className="medico-filter-select-container"
                 classNamePrefix="medico-especializacoes-select"
-                placeholder="Pesquisar por Marca"
+                placeholder="Pesquisar por marcas"
                 inputId="marcas"
                 onChange={value => handleChangeMarca(value as Marca)}
                 isClearable

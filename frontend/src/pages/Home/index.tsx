@@ -1,7 +1,6 @@
 import React from 'react';
 import ButtonIcon from 'core/components/ButtonIcon';
 import { Link } from 'react-router-dom';
-import MainImage from 'core/assets/images/banner.jpg';
 import Trucks from 'core/assets/images/trucks.jpg';
 import TrucksView from 'core/assets/images/truck-view.jpeg';
 import Van from 'core/assets/images/van.jpeg';
@@ -9,16 +8,32 @@ import './styles.scss';
 
 const Home = () => (
     <div className="home-container">
-        <img className="home-main-image" src={MainImage} alt="MainImage" />
+        <section className="featured" style={{
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundImage: `url(https://mapin-tropical.s3.sa-east-1.amazonaws.com/banner.jpg)`
+        }}>
+            <div className="featured--vertical">
+                <div className="featured--horizontal">
+                    <img className="home-main-logo" src="https://mapin-tropical.s3.sa-east-1.amazonaws.com/Posto+de+Molas+Tropical.jpg" alt="logo" />
+                </div>
+            </div>
+
+        </section>
+
         <div className="home-content">
-            <h2 className="home-title">Sobre o Posto de Mola Tropical</h2>
+            <div>
 
-            <p className="home-paraph">Localizada na cidade de Araraquara o <strong>Posto de Mola Tropical</strong> traz para o mercado o que há de melhor para o seu caminhão e utilitário.
-                Fundada em XXXX, a empresa é destaque na cidade e conquista novos clientes a cada dia.</p>
+                <h2 className="home-title">Sobre o Posto de Mola Tropical</h2>
 
-            <p className="home-mission-paraph"><em>Nossa missão é: <strong className="red-title">"Executar o melhor serviço para seu caminhão e utilitário"</strong>.</em></p>
-
-            <p className="home-paraph">A oficina tem a competência de profissionais qualificados e experientes com mais de 20 anos, utilizando o processo de manutenção e ferramentas de alta tecnologia com o que há de mais avançado no mercado.</p>
+                <p className="home-paraph">Localizada na cidade de Araraquara o Posto de Mola Tropical traz para o mercado o que há de melhor para o seu caminhão e utilitário.
+                    Fundada em XXXX, a empresa é destaque na cidade e conquista novos clientes a cada dia. A oficina tem a
+                    competência de profissionais qualificados e experientes com mais de 20 anos, utilizando o processo de
+                    manutenção e ferramentas de alta tecnologia com o que há de mais avançado no mercado.</p>
+            </div>
+            <div>
+                <img className="home-content-img" src={Trucks} alt="logo" />
+            </div>
         </div>
         <h3 className="home-title-benefits">Nossos Principais Serviços</h3>
 

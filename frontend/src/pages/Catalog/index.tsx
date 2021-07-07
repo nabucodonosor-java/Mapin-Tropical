@@ -25,7 +25,7 @@ const Catalog = () => {
         }
 
         setIsLoading(true);
-        makePrivateRequest({ url: '/pecas/marcas', params })
+        makePrivateRequest({ url: '/pecas', params })
        .then(response => setPecaResponse(response.data))
        .finally(() => {
         setIsLoading(false);

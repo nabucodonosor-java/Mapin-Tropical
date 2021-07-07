@@ -2,7 +2,10 @@
     text-align: center;
     padding: 0;
     margin: 0;
-    background: #CCC;
+}
+
+.home-content {
+    background: #BBB;
 }
 
 .home-main-image {
@@ -31,8 +34,7 @@ em strong {
 
 .home-title-benefits {
     text-align: center;
-    background: #FFF;
-    padding: 20px 50px;
+    padding: 50px 50px;
 }
 
 .home-items {
@@ -40,9 +42,6 @@ em strong {
 
 }
 
-.product-container {
-    background: #FFF;
-}
 .product-list {
     display: flex;
     justify-content: center; 
@@ -52,32 +51,33 @@ em strong {
     border: 1px solid black;
     border-radius: 10px;
     margin-right: 50px;
-    height: 200px;
+    height: 230px;
     width: 250px;
+    margin-bottom: 50px;
 }
 
 .product-card:hover {
-    border: 3px solid #C78C19;
-}
-
-.product-card:hover h2 {
-    font-size: 30px;
-
-}
-
-ul li h2 {
-    text-align: center;
-    font-size: 30px;
-    padding: 10px 0;
-}
-
-ul li p {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 10px;
+    border: 5px solid #C78C19;
 }
 
 .product-img {
-    width: 50%;
-    border-radius: 20px;
+    width: 80%;
+    border-radius: 100%;
+}
+
+.btn-search {
+    justify-content: center;
+}
+
+.home-product-search {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 50px 0;
+    align-items: center;
+}
+
+.list-p {
+    padding: 5px 5px;
+    font-style: italic;
+    font-weight: bold;
 }

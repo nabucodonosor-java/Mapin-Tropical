@@ -1,7 +1,7 @@
 .navbar-main {
     width: 100% !important;
     height: 70px;
-    color: white;
+    color: black;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -54,7 +54,7 @@
 
     &.active {
          font-weight: bold;
-        color: #FFF;
+        color: #C78C19;
     }
 
     &:hover {

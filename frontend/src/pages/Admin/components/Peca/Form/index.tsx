@@ -104,7 +104,7 @@ const Form = () => {
                                 options={categorias}
                                 getOptionLabel={(option: Categoria) => option.nome}
                                 getOptionValue={(option: Categoria) => String(option.id)}
-                                classNamePrefix="especializacoes-select"
+                                classNamePrefix="select-select"
                                 className="input-select"
                                 placeholder="Categoria da peça"
                                 inputId="categorias"
@@ -126,7 +126,7 @@ const Form = () => {
                                 options={marcas}
                                 getOptionLabel={(option: Marca) => option.nome}
                                 getOptionValue={(option: Marca) => String(option.id)}
-                                classNamePrefix="especializacoes-select"
+                                classNamePrefix="select-select"
                                 className="input-select"
                                 placeholder="Marcas compatíveis"
                                 inputId="marcas"
@@ -154,22 +154,25 @@ const Form = () => {
                                     {errors.nome.message}
                                 </div>
                             )}
-                        </div>            
+                        </div>
 
                         <div className="margin-bottom-30">
                             <ImageUpload onUploadSuccess={onUploadSuccess} pecaImgUrl={pecaImgUrl} />
                         </div>
+
                     </div>
-                    
-                    <h6>Descrição Técnica da Peça</h6>
-                    <textarea
-                        ref={register({ required: false })}
-                        name="descricao"
-                        className="form-control input-base mb-3 mt-2"
-                        placeholder="Descrição Técnica da Peça"
-                        cols={30}
-                        rows={10}
-                    />
+                    <div className="col-6">
+                        <h4>Descrição Técnica da Peça</h4>
+                        <textarea
+                            ref={register({ required: false })}
+                            name="descricao"
+                            className="form-control input-base mt-1"
+                            placeholder="Descrição Técnica da Peça"
+                            cols={30}
+                            rows={15}
+                        />
+                    </div>
+
                 </div>
             </BaseForm>
         </form>

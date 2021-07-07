@@ -3,7 +3,7 @@ import { Categoria } from 'core/types/Peca';
 import { Link } from 'react-router-dom';
 import './styles.scss';
 
-type Props = {
+type Props = { 
     categoria: Categoria;
     onRemove: (categoriaId: number) => void;
 } 
@@ -11,12 +11,12 @@ type Props = {
 const Card = ({ categoria, onRemove }: Props) => {
 
     return ( 
-        <div className="card-base especialidade-card-admin">
+        <div className="card-base categoria-card-admin">
                 <div className="col-9 py-3">
                    <h6>{categoria.nome}</h6>
                          
                 </div>
-                <div className="col-3 especialidade-card-btn">
+                <div className="col-3 categoria-card-btn">
                     <Link
                     to={`/admin/categorias/${categoria.id}`}
                     type="button"

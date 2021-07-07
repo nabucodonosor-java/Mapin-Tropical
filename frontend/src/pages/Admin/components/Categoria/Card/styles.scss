@@ -1,4 +1,4 @@
-.especialidade-card-admin {
+.categoria-card-admin {
     margin-bottom: 20px;
     border-radius: 10px;
     display: flex;
@@ -7,13 +7,7 @@
     max-height: 50px;
 }
 
-.medico-card-name-admin {
-    font-size: 18px;
-    line-height: 25px;
-    letter-spacing: -0.015em;
-}
-
-.especialidade-card-btn {
+.categoria-card-btn {
     display: flex;
     align-items: center;    
 }
@@ -29,7 +23,7 @@
         margin-left: 10px;
     }
 
-    .medico-card-img-admin {
+    .peca-card-img-admin {
         height: 10px;
         width: 10px;
         margin: 5px 10px;

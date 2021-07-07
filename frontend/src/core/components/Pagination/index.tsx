@@ -1,14 +1,12 @@
 import React from 'react';
 import { ReactComponent as ArrowIcon } from 'core/assets/images/arrow.svg';
-
-import './styles.scss';
 import { generateList } from '../../utils/list';
-
+import './styles.scss';
 
 type Props = {
     totalPages: number; 
     activePage: number;
-    onChange: (item: number) => void;
+    onChange: (item: number) => void; 
 }
 
 const Pagination = ({ totalPages, activePage, onChange }: Props) => {

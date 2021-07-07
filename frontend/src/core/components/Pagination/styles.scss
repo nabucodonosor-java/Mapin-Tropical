@@ -14,7 +14,7 @@
     font-size: 18px;
     line-height: 25px;
     letter-spacing: -0.015em;
-    color: #FFFFFF;
+    color: #383636;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@
     margin-right: 10px;
 
     &.active {
-        background: #407BFF;
+        background: #C78C19;
     }
 }
 
@@ -37,7 +37,7 @@
 }
 
 .page-active {
-    color: #407BFF;
+    color: #C78C19;
     cursor: pointer; 
 }
 

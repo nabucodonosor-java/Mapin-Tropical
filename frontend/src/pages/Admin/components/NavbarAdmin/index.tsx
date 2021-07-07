@@ -8,7 +8,7 @@ const NavbarAdmin = () => (
             <li>
                 <NavLink to="/admin/pecas" className="admin-nav-admin-item">
                     Peças
-                </NavLink> 
+                </NavLink>  
             </li>
             <li>
                 <NavLink to="/admin/marcas" className="admin-nav-admin-item">

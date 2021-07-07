@@ -76,7 +76,7 @@ const List = () => {
     return (
         <div>
             <div className="d-flex justify-content-between admin-div-btn">
-                <button className="btn btn-third btn-secondary btn-lg admin-btn-add mr-5" onClick={handleCreate}>
+                <button className="btn btn-primary btn-lg admin-btn-add mr-5" onClick={handleCreate}>
                     ADICIONAR
                 </button>
                 <PecaFilters

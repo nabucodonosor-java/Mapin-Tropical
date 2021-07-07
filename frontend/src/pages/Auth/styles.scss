@@ -6,6 +6,14 @@
     background-size: 100%;
 }
 
+.auth-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+    max-height: 620px;
+}
+
 .auth-info-title {
     font-size: 55px;
     line-height: 75px;
@@ -23,6 +31,10 @@
     letter-spacing: -0.015em;
     color: #9E9E9E;
     text-align: center;
+}
+
+.auth-img {
+    border-radius: 100%;
 }
 
 @media (max-width: 768px) {

@@ -61,7 +61,7 @@ const List = () => {
             })
             .catch(() => {
                 toast.error('Erro ao deletar categoria');
-            })
+            }) 
         }
     }
 

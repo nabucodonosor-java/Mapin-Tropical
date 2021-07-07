@@ -5,20 +5,20 @@ import './styles.scss';
 
 type Props = {
     peca: Peca;
-    onRemove: (pecaId: number) => void;
+    onRemove: (pecaId: number) => void; 
 }
 
 const Card = ({ peca, onRemove }: Props) => {
 
     return (
-        <div className="card-base medico-card-admin">
+        <div className="card-base peca-card-admin">
             <div className="text-center border-right py-3">
                 <img src={peca.imgUrl}
-                    alt={peca.nome} className="medico-card-img-admin" />
+                    alt={peca.nome} className="peca-card-img-admin" />
             </div>
             <div className="col-7 py-3">
                 {peca.marcas.map(e => " - " + e.nome + " - ")}
-                <h3 className="card-content medico-card-name-admin mt-2 mb-2">
+                <h3 className="card-content peca-card-name-admin mt-2 mb-2">
                     {peca.nome}
                 </h3>
                 <div>
@@ -32,7 +32,7 @@ const Card = ({ peca, onRemove }: Props) => {
             </div>
             <div className="col-3 pt-3 pr-5">
                 <Link
-                    to={`/admin/medicos/${peca.id}`}
+                    to={`/admin/pecas/${peca.id}`}
                     type="button"
                     className="btn btn-outline-secondary btn-block border-radius-10 mb-3"
                 >

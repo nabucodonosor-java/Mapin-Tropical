@@ -4,14 +4,13 @@ import { useHistory, useParams } from 'react-router';
 import { makePrivateRequest } from 'core/utils/request';
 import { toast } from 'react-toastify';
 import BaseForm from '../../BaseForm';
-import './styles.scss';
 
 export type FormState = {
     id: number;
     nome: string;
 }
 
-type ParamsType = {
+type ParamsType = { 
     marcaId: string;
 }
 

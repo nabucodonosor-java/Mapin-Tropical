@@ -7,7 +7,7 @@ import './styles.scss';
 type Props = { 
     onUploadSuccess: (imgUrl: string) => void;
     pecaImgUrl: string; 
-}
+} 
 
 const ImageUpload = ({ onUploadSuccess, pecaImgUrl }: Props) => {
     const [uploadProgress, setUploadProgress] = useState(0);

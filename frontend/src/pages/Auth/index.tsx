@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as AuthImage } from 'core/assets/images/auth.svg';
+import AuthImage from 'core/assets/images/img-login.jpg';
 import { Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import './styles.scss';
@@ -8,12 +8,12 @@ const Auth = () => (
     <div className="auth-container">
         <div className="auth-info">
             <h1 className="auth-info-title">
-                Base de Dados <br/> Jácomo Ortopedia
+                Posto de Mola Tropical
             </h1>
             <p className="auth-info-subtile">
-                Base de visitação médica da Jácomo Ortopedia Técnica
+                Lista de peças e serviços da empresa
             </p>
-            <AuthImage />
+           <img src={AuthImage} alt="logo" className="auth-img" />
         </div>
         <div className="auth-content">
             <Switch>

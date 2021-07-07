@@ -5,7 +5,7 @@ import Trucks from 'core/assets/images/trucks.jpg';
 import AboutImg from 'core/assets/images/trucks-combo.jpeg';
 import TrucksView from 'core/assets/images/truck-view.jpeg';
 import Van from 'core/assets/images/van.jpeg';
-import './styles.scss';
+import './styles.scss'; 
 
 const Home = () => (
     <div className="home-container">
@@ -39,8 +39,8 @@ const Home = () => (
 
         </div>
 
-        <div className="home-product-search">
-            <h3 className="home-title-benefits mr-5">Conheça nosso catálogo de peças</h3>
+        <div className="home-pecas-search">
+            <h3 className="home-title-benefits mb-2 mr-5">Conheça nosso catálogo de peças</h3>
             <Link to="/pecas" className="btn-search">
                 <ButtonIcon text="inicie agora a sua busca" />
             </Link>
@@ -49,21 +49,20 @@ const Home = () => (
         <h3 className="home-title-services">Nossos Principais Serviços</h3>
 
             <div className="home-service-list">
-                <div className="product-card">
-                    <h2 className="product-card-title">Molejos</h2>
-                    <img src={Trucks} alt="tropical" className="product-img" />
+                <div className="service-card">
+                    <h2 className="service-card-title">Molejos</h2>
+                    <img src={Trucks} alt="tropical" className="service-img" />
                     <p className="list-p">Manutenções de todo o sistema de molejo</p>
                 </div>
-                <div className="product-card">
+                <div className="service-card">
                     <h2>Tensores</h2>
-                    <img src={Van} alt="cabelo" className="product-img" />
+                    <img src={Van} alt="cabelo" className="service-img" />
                     <p className="list-p">Manutenção de braços tensores</p>
                 </div>
-                <div className="product-card">
+                <div className="service-card">
                     <h2>Balança</h2>
-                    <img src={TrucksView} alt="cabelo" className="product-img" />
-                    <p className="list-p">Manutenção e trocas de balanças tensores</p>
-                </div>
+                    <img src={TrucksView} alt="cabelo" className="service-img" />
+                    <p className="list-p">Manutenção e trocas de balanças tensores</p>        </div>
             </div>
     </div>
 );

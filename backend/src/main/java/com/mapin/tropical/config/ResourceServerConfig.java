@@ -17,6 +17,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.http.HttpMethod;
 
 @Configuration
 @EnableResourceServer
@@ -30,7 +31,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	private static final String[] PUBLIC = { "/oauth/token", "/h2-console/**" };
 
-	private static final String[] OPERATOR_OR_ADMIN = { "/pecas/**", "/marcas/**" };
+	private static final String[] OPERATOR_OR_ADMIN = { "/marcas/**", "/categorias/**", "/pecas/**" };
 
 	private static final String[] ADMIN = { "/users/**" };
 
@@ -47,10 +48,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 			http.headers().frameOptions().disable();
 		}
 
-		http.authorizeRequests().antMatchers(PUBLIC).permitAll()
-				// .antMatchers(HttpMethod.GET, OPERATOR_OR_ADMIN).permitAll()
-				.antMatchers(OPERATOR_OR_ADMIN).hasAnyRole("OPERATOR", "ADMIN").antMatchers(ADMIN).hasRole("ADMIN")
-				.anyRequest().authenticated();
+		http.authorizeRequests()
+		.antMatchers(PUBLIC).permitAll()
+		.antMatchers(HttpMethod.GET, OPERATOR_OR_ADMIN).permitAll()
+		.antMatchers(OPERATOR_OR_ADMIN).hasAnyRole("OPERATOR", "ADMIN")
+		.antMatchers(ADMIN).hasRole("ADMIN")
+		.anyRequest().authenticated();
 
 		http.cors().configurationSource(corsConfigurationSource());
 	}

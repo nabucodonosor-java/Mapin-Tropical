@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from 'react-router';
+import { Switch } from 'react-router-dom';
 import NavbarAdmin from './components/NavbarAdmin';
 import Peca from './components/Peca';
 import PrivateRoute from 'core/components/Routes/PrivateRoute';

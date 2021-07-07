@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ReactComponent as ArrowIcon } from 'core/assets/images/arrow.svg';
-import { makePrivateRequest } from 'core/utils/request';
+import { makeRequest } from 'core/utils/request';
 import './styles.scss';
 import { Peca } from 'core/types/Peca';
 import PecaInfoLoader from '../Loaders/PecaInfoLoader';
@@ -19,7 +19,7 @@ const PecaDetails = () => {
     
     useEffect(() => {
         setIsLoading(true);
-        makePrivateRequest({ url: `/pecas/${pecaId}`})
+        makeRequest({ url: `/pecas/${pecaId}`})
         .then(response => setPeca(response.data))
         .finally(() => setIsLoading(false));
     }, [pecaId]);

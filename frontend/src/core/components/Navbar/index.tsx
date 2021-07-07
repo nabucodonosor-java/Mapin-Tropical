@@ -18,7 +18,7 @@ const Navbar = () => {
         const currentUserData = getAccessTokenDecoded();
         setCurrentUser(currentUserData.user_name);
     }, [location]);
-    
+     
     return (
         <nav className="bg-primary navbar-main">
   

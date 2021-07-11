@@ -8,7 +8,7 @@ const Auth = () => (
     <div className="auth-container">
         <div className="auth-info">
             <h1 className="auth-info-title">
-                Posto de Mola Tropical
+                Posto de Molas Tropical
             </h1>
             <p className="auth-info-subtile">
                 Lista de peças e serviços da empresa

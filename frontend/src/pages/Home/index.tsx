@@ -1,25 +1,26 @@
 import React from 'react';
 import ButtonIcon from 'core/components/ButtonIcon';
 import { Link } from 'react-router-dom';
-import Trucks from 'core/assets/images/trucks.jpg';
+import Molejo from 'core/assets/images/molejo.jpg';
 import AboutImg from 'core/assets/images/trucks-combo.jpeg';
-import TrucksView from 'core/assets/images/truck-view.jpeg';
-import Van from 'core/assets/images/van.jpeg';
-import './styles.scss'; 
+import Balanca from 'core/assets/images/balanca.jpg';
+import Tensor from 'core/assets/images/tensor.jpg';
+import Suporte from 'core/assets/images/suporte.jpg';
+import './styles.scss';
 
 const Home = () => (
     <div className="home-container">
         <section className="featured" style={{
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundImage: `url(https://mapin-tropical.s3.sa-east-1.amazonaws.com/truck-main.jpeg)`
+            backgroundImage: `url(https://mapin-tropical.s3.sa-east-1.amazonaws.com/main-ing.jpg)`
         }}>
             <div className="featured--vertical">
                 <div className="featured--horizontal">
                     <img className="home-main-logo" src="https://mapin-tropical.s3.sa-east-1.amazonaws.com/logo-bco.jpg" alt="logo" />
                     <p className="home-container-title">Localizada na cidade de Araraquara o Posto de Mola <br />
                         Tropical traz para o mercado o que há de melhor <br /> para o seu caminhão e utilitário.
-                        Fundada em XXXX, <br />a empresa é destaque na cidade e conquista novos <br />
+                        Fundada em 1998, <br />a empresa é destaque na cidade e conquista novos <br />
                         clientes a cada dia. </p>
                 </div>
 
@@ -48,22 +49,25 @@ const Home = () => (
 
         <h3 className="home-title-services">Nossos Principais Serviços</h3>
 
-            <div className="home-service-list">
-                <div className="service-card">
-                    <h2 className="service-card-title">Molejos</h2>
-                    <img src={Trucks} alt="tropical" className="service-img" />
-                    <p className="list-p">Manutenções de todo o sistema de molejo</p>
-                </div>
-                <div className="service-card">
-                    <h2>Tensores</h2>
-                    <img src={Van} alt="cabelo" className="service-img" />
-                    <p className="list-p">Manutenção de braços tensores</p>
-                </div>
-                <div className="service-card">
-                    <h2>Balança</h2>
-                    <img src={TrucksView} alt="cabelo" className="service-img" />
-                    <p className="list-p">Manutenção e trocas de balanças tensores</p>        </div>
+        <div className="home-service-list">
+            <div className="service-card">
+                <h2 className="service-card-title mb-1">Molejos</h2>
+                <img src={Molejo} alt="tropical" className="service-img" />
             </div>
+            <div className="service-card">
+                <h2 className="service-card-title mb-1">Tensores</h2>
+                <img src={Tensor} alt="cabelo" className="service-img" />
+
+            </div>
+            <div className="service-card">
+                <h2 className="service-card-title mb-1">Balanças</h2>
+                <img src={Balanca} alt="cabelo" className="service-img" />
+            </div>
+            <div className="service-card">
+                <h2 className="service-card-title mb-1">Suportes</h2>
+                <img src={Suporte} alt="cabelo" className="service-img" />
+            </div>
+        </div>
     </div>
 );
 

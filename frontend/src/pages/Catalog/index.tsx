@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Marca, PecaResponse } from 'core/types/Peca';
-import { makePrivateRequest } from 'core/utils/request';
+import { makeRequest } from 'core/utils/request';
 import PecaCard from './components/PecaCard';
 import PecaCardLoader from './components/Loaders/PecaCardLoader';
 import Pagination from 'core/components/Pagination';
@@ -25,7 +25,7 @@ const Catalog = () => {
         }
 
         setIsLoading(true);
-        makePrivateRequest({ url: '/pecas', params })
+        makeRequest({ url: '/pecas', params })
        .then(response => setPecaResponse(response.data))
        .finally(() => {
         setIsLoading(false);

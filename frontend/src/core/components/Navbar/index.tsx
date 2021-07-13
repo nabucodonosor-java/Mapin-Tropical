@@ -19,7 +19,7 @@ const Navbar = () => {
         setCurrentUser(currentUserData.user_name);
     }, [location]);
      
-    return (
+    return ( 
         <nav className="bg-primary navbar-main">
   
                 <button className="navbar-mobile-btn" type="button" onClick={() => setDrawerActive(!drawerActive)}>

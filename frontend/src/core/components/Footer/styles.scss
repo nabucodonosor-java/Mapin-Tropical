@@ -1,0 +1,36 @@
+.footer {
+    background: #383636;
+    height: 150px;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-div-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-img {
+    margin-right: 20px;
+    width: 6%;
+}
+
+.footer-p {
+    font-style: italic;
+    text-decoration: none;
+    color: #FFF;
+}
+
+@media (max-width: 576px) {
+    .footer {
+        width: 110% !important;
+    }
+
+    .footer-title {
+        font-size: 14px;
+    }
+}

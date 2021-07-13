@@ -18,7 +18,7 @@ const Home = () => (
             <div className="featured--vertical">
                 <div className="featured--horizontal">
                     <img className="home-main-logo" src="https://mapin-tropical.s3.sa-east-1.amazonaws.com/logo-bco.jpg" alt="logo" />
-                    <p className="home-container-title">Localizada na cidade de Araraquara o Posto de Mola <br />
+                    <p className="home-container-title">Localizada na cidade de Araraquara o Posto de Molas <br />
                         Tropical traz para o mercado o que há de melhor <br /> para o seu caminhão e utilitário.
                         Fundada em 1998, <br />a empresa é destaque na cidade e conquista novos <br />
                         clientes a cada dia. </p>

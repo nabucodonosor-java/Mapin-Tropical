@@ -49,7 +49,7 @@ public class PecaController {
 	}
 
 	@GetMapping
-	public ResponseEntity<Page<PecaDto>> findAllEspecializacao(
+	public ResponseEntity<Page<PecaDto>> findAllMarcas(
 			@RequestParam(value = "marcaId", defaultValue = "0") Long marcaId,
 			@RequestParam(value = "nome", defaultValue = "") String nome,
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
